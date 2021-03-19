@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>result</title>
+<script type="text/javascript">
+      function play() {
+        var video = document.getElementById("video");
+        video.play();
+      }  
+    </script>
+
+</head>
+<body>
+	<!-- Flask 使用Jinja2模板引擎，Jinja2模板引擎源于Django板模所以很多语法和Django是类似的 -->
+	<h1>{{ result }}</h1>
+	<h1>{{ result2 }}</h1>
+	<h1>{{ result3 }}</h1>
+	    <video id="video" width="100%" height="100%" src="tokyo.mp4" autoplay="autoplay" loop="loop" autobuffer > 
+      <div class="fallback"> <p>You must have an HTML5 capable browser.</p> </div> 
+    </video>
+
+</body>
+
+</html>

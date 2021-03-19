@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>MCTS-TRAVEL(゜-゜)つロ 干杯~-水树悠太出品</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,700i" rel="stylesheet">
+
+    <link rel="stylesheet" href="static/css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="static/css/animate.css">
+    
+    <link rel="stylesheet" href="static/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="static/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="static/css/magnific-popup.css">
+
+    <link rel="stylesheet" href="static/css/aos.css">
+
+    <link rel="stylesheet" href="static/css/ionicons.min.css">
+
+    <link rel="stylesheet" href="static/css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="static/css/jquery.timepicker.css">
+
+    
+    <link rel="stylesheet" href="static/css/flaticon.css">
+    <link rel="stylesheet" href="static/css/icomoon.css">
+    <link rel="stylesheet" href="static/css/style.css">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+     <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+    <script type="text/javascript">
+        var result = null;
+        function myFunction(){
+          $.ajax({
+              type: "GET",
+             // async: false,
+             // dataType: "json",
+              url: "/deal_request",//与后台联系，红色表示的是Home.java中的·export（）方法这个方法
+              success : function(data){
+                  result=data;
+                  //data = eval('('+data+')');
+                 //var result = data.rows[0];
+                //alert("<%=basePath%>");
+              }
+          });
+        }
+        function showResult(){
+          alert("您的旅行规划结果是：                 "+result);
+        }
+        myFunction();
+        var maxtime = 1 * 15; //一个小时，按秒计算，自己调整!
+        function CountDown() {
+                
+                if (maxtime >= 0) {
+                    minutes = Math.floor(maxtime / 60);
+                    seconds = Math.floor(maxtime % 60);
+                    msg = "距AI计算结束大约还有" + minutes + "分" + seconds + "秒";
+                    document.all["timer"].innerHTML = msg;
+                    if (maxtime == 5 * 60)alert("还剩5分钟");
+                        --maxtime;
+                } else{
+                    clearInterval(timer);
+                    alert("时间到！可查看规划结果");
+                    
+                    showResult();
+                    msg = "谢谢使用";
+                    document.all["timer"].innerHTML = msg;
+                   
+                }
+            }
+        timer = setInterval("CountDown()", 1000);
+    </script>
+    <style type="text/css">
+        .vedio-container { position:relative; }
+        .vedio-container video {
+            position:relative;
+            z-index:0;
+        }
+        .vedio-overlay {
+            position:absolute;
+            top:80%;
+            text-align: center;
+            z-index:1;
+        }
+
+    </style>
+  </head>
+  <body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+	    <div class="container">
+	      <a class="navbar-brand" href="index.html">MCTS-TRAVEL</a>
+	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+	        <span class="oi oi-menu"></span> Menu
+	      </button>
+
+	      <div class="collapse navbar-collapse" id="ftco-nav">
+	        <ul class="navbar-nav ml-auto">
+	          <li class="nav-item active"><a href="index.html" class="nav-link">Home</a></li>
+	          <li class="nav-item"><a href="Tokyo.html" class="nav-link">Tokyo</a></li>
+	          <li class="nav-item"><a href="mizukiyuta.html" class="nav-link">MizukiYuta</a></li>
+	          <li class="nav-item"><a href="about.html" class="nav-link">MctsTravel</a></li>
+	          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+	        </ul>
+	      </div>
+	    </div>
+	  </nav>
+    <!-- END nav -->
+    
+    <section  style="width: 100%;background-color: #232323; ">
+        <div id="vedioScreen" class="vedio-container" style="height:100%;width: 100%;">
+            <video id="myVideo"  style="height:100%;width: 100%;"  loop autoplay="autoplay" > 
+
+            	 <source src="static/tokyo.webm" type="video/webm">
+              	<source src="static/tokyo.mp4" type="video/mp4">
+
+              <div class="fallback"> <p>You must have an HTML5 capable browser.</p> </div> 
+            </video>
+              <div  class="vedio-overlay"  style="width: 100%;" >
+                    <h1 id="timer"  style="margin:0 auto;border:1px solid white;width:60%;font-size: 50px;color:#FFFFFF"></h1>
+             </div>
+        </div>
+      
+    </section>
+
+
+    <footer class="ftco-footer ftco-bg-dark ftco-section" >
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2">MizukiYuta Travel</h2>
+              <p>一个兴趣使然的旅行规划小站。如果对此感兴趣，请联系我</p>
+              <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
+                <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
+                <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
+                <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-4 ml-md-5">
+              <h2 class="ftco-heading-2">相关链接</h2>
+              <ul class="list-unstyled">
+                <li><a href="#" class="py-2 d-block">Tokyo</a></li>
+                <li><a href="#" class="py-2 d-block">MizukiYuta</a></li>
+                <li><a href="#" class="py-2 d-block">MctsTravel</a></li>
+                <li><a href="#" class="py-2 d-block">Contact</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md">
+             <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2">Privacy</h2>
+              <ul class="list-unstyled">
+                <li><a href="#" class="py-2 d-block">Career</a></li>
+                <li><a href="#" class="py-2 d-block">About Us</a></li>
+                <li><a href="#" class="py-2 d-block">Contact Us</a></li>
+                <li><a href="#" class="py-2 d-block">Services</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-4">
+            	<h2 class="ftco-heading-2">对此有疑问?</h2>
+            	<div class="block-23 mb-3">
+	              <ul>
+	                <li><span class="icon icon-map-marker"></span><span class="text">Tokyo Metropolitan University</span></li>
+	                <li><a href="#"><span class="icon icon-phone"></span><span class="text">+86 13588742787</span></a></li>
+	                <li><a href="#"><span class="icon icon-envelope"></span><span class="text">mizukiyuta@163.com</span></a></li>
+	              </ul>
+	            </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 text-center">
+
+            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made by <i class="icon-heart color-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">MizukiYuta</a>
+  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    
+  
+
+  <!-- loader -->
+  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+
+
+  <script src="static/js/jquery.min.js"></script>
+  <script src="static/js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="static/js/popper.min.js"></script>
+  <script src="static/js/bootstrap.min.js"></script>
+  <script src="static/js/jquery.easing.1.3.js"></script>
+  <script src="static/js/jquery.waypoints.min.js"></script>
+  <script src="static/js/jquery.stellar.min.js"></script>
+  <script src="static/js/owl.carousel.min.js"></script>
+  <script src="static/js/jquery.magnific-popup.min.js"></script>
+  <script src="static/js/aos.js"></script>
+  <script src="static/js/jquery.animateNumber.min.js"></script>
+  <script src="static/js/bootstrap-datepicker.js"></script>
+  <!--<script src="static/js/jquery.timepicker.min.js"></script>-->
+  <script src="static/js/scrollax.min.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+  <script src="static/js/google-map.js"></script>
+  <script src="static/js/main.js"></script>
+    
+  </body>
+</html>
