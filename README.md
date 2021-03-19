@@ -19,7 +19,7 @@ python Main/WEB/flask-main.py
 python Main/AI/Main.py
 
 
-#CSDN introdution
+# CSDN introdution
 https://blog.csdn.net/qq_37822060/article/details/115002724
 
 
