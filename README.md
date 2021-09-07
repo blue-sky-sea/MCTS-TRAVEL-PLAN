@@ -9,8 +9,8 @@ a travel planning AI demo using MCTS algorithm based on flask（python）
 
 ========================================================================
 
-## vedio is too big to upload。
-因为vedio太大了，所以没有上传。
+## video is too big to upload。
+因为video太大了，所以没有上传。
 
 ## dependence依赖
 flask
